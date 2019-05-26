@@ -1,0 +1,85 @@
+/*
+  IMPORTANT
+  Properties who need explanation have a comment above them.
+  All properties have their default / original value for production / streaming behind them in the same line as a comment.
+
+  Feel free to play around with all values, you can restore everything by reverting the values to their defaults.
+*/
+
+@font-face {
+
+  /* don't change this property */
+  font-family: font; /* font */
+
+  /* url of the font file */
+  src: url("fonts/Gotham Medium.otf"); /* url("../fonts/Gotham Medium.otf") */
+}
+
+:root {
+
+  /* GLOBAL SETTINGS */
+  /* set this to 1 if you have skipInitFade enabled, set to 0 if false */
+  --initOpacity: 0; /* 0 */
+
+  /* set to transparent for use in Xsplit, set to anything (grey for example) for viewing it in a browser */
+  --background: transparent; /* transparent */
+
+  /* set to initial for mixed case, or uppercase */
+  /* you must change the uppercase variable in the config.js to false if you use initial */
+  --text-mode: uppercase; /* uppercase */
+
+  /* skew of the entire layout, can't guarantee changing this won't break stuff, but you can always change it back to the default 20px */
+  --skew: 20px; /* 20px */
+
+
+  /* BANNER SETTING */
+  --banner-width: 1200px; /* 1200px */
+  --banner-height: 50px; /* 50px */
+  --banner-y-position: 40px; /* 40px */
+  --banner-shadow-opacity: 0.445; /* 0.445 */
+
+  /* the end pieces are darkened by a black shape inside, this controls it's opacity */
+  --banner-inner-opacity: 0.2; /* 0.2 */
+
+  --banner-end-width: 50px; /* 50px */
+  --banner-end-border-x: 5px; /* 5px */
+  --banner-end-border-y: 2px; /* 2px */
+  --banner-end-left-color: red; /* red */
+  --banner-end-left-color: blue; /* blue */
+  --banner-end-right-color: 2px; /* 2px */
+
+  --char-border-skew-adjust: 18px; /* 18px */
+  --char-background: white; /* white */
+  --char-border-background: white; /* white */
+  --char-container-width: 70px; /* 70px */
+
+  --player-tag-color: white; /* white */
+  --sponsor-color: #ddd; /* #ddd */
+  --score-color: white; /* white */
+
+  /* this controls merely the size of the score's container, not the actual font size. it might be required to adjust for a much bigger font size */
+  --score-width: 50px; /* 50px */
+
+  /* blurs some stuff at the scores */
+  --score-filter: blur(5px); /* blur(5px) */
+
+  /* LOGO SETTINGS */
+  --logo-container-width: 170px; /* 170px */
+  --logo-container-height: 120%; /* 120px */
+  --logo-container-accent: red; /* red */
+  --logo-sidebars-width: 3px; /* 3px */
+
+  /* fit height to 100%, change to 100% auto for fit to width */
+  --logo-size: auto 100%; /* auto 100% */
+
+  /* SUB BANNER SETTINGS */
+  --sub-banner-width: 600px; /* 600px */
+  --sub-banner-distance-top: 10px; /* 10px */
+  --sub-banner-height: 25px; /* 25px */
+  --sub-banner-background: black; /* black */
+  --sub-banner-font-color: white; /* white */
+  --sub-banner-font-size: 14px; /* 14px */
+
+  /* this might have to be adjusted to look good when changing skew or sub-banner dimensions */
+  --sub-banner-skew-factor: 0.5; /* 0.5 */
+}

@@ -1,0 +1,76 @@
+.skew-left-padding {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding, #right > .char-container, #right > .name, #right .char {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#right > .end {
+  -webkit-clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - 0px) 100%, 0 100%);
+          clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - 0px) 100%, 0 100%);
+  background: blue;
+}
+
+#right > .end .inner {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+#right > .char-container {
+  -webkit-clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - 0px) 100%, 0 100%);
+          clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - 0px) 100%, 0 100%);
+}
+
+#right > .name {
+  -webkit-clip-path: polygon(0px 0, 100% 0, calc(100% - var(--skew)) 100%, 0 100%);
+          clip-path: polygon(0px 0, 100% 0, calc(100% - var(--skew)) 100%, 0 100%);
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#right > .score {
+  -webkit-clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - var(--skew)) 100%, 0 100%);
+          clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - var(--skew)) 100%, 0 100%);
+  background-image: linear-gradient(110deg, red, red, rgba(255, 0, 0, 0), transparent);
+  background-size: 150%;
+  background-position: bottom 0 left -30px;
+  background-repeat: no-repeat;
+}
+
+#right .char {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  background-image: url("/chars/mario.png");
+  background-size: 120px;
+  background-position: calc(var(--cx) + var(--skew)) var(--cy);
+  /*clip-path: polygon(
+      calc(var(--x) + var(--s))
+      var(--y),
+
+      calc(100% - var(--x))
+      var(--y),
+
+      calc(100% - var(--x) - var(--s))
+      calc(100% - var(--y)),
+
+      var(--x)
+      calc(100% - var(--y))
+    );*/
+}
+/*# sourceMappingURL=right.css.map */

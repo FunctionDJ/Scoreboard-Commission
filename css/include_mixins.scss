@@ -1,0 +1,33 @@
+@mixin skew($side, $reverse) {
+  $left: if($side == "left" or $side == "both", var(--skew), 0px);
+  $right: if($side == "right" or $side == "both", var(--skew), 0px);
+  @if $reverse {
+    clip-path: polygon(
+      #{$left} 0,
+       100% 0,
+       calc(100% - #{$right}) 100%,
+      0 100%);
+  } @else {
+    clip-path: polygon(
+      0 0,
+      calc(100% - #{$right}) 0,
+      100% 100%,
+      #{$left} 100%);
+  }
+}
+
+.skew-left-padding {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

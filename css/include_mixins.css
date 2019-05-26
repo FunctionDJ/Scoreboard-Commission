@@ -1,0 +1,22 @@
+.skew-left-padding {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=include_mixins.css.map */

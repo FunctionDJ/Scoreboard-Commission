@@ -1,0 +1,49 @@
+@import "include_mixins";
+
+#left {
+  > .end {
+    @include skew("right", false);
+    background: red;
+  }
+
+  > .char-container {
+    @include skew("right", false);
+  }
+
+  > .name {
+    @extend .skew-left-padding;
+    @include skew("left", false);
+
+    > .spon {
+      margin-left: var(--skew);
+    }
+  }
+
+  > .score {
+    @include skew("both", false);
+    background-image: linear-gradient(-110deg, red, red, hsla(0, 100%, 50%, 0%), transparent);
+    background-size: 150%;
+    background-position: bottom 0 right -30px;
+    background-repeat: no-repeat;
+  }
+
+  .char {
+    background-image: url("/chars/mario.png");
+    background-size: calc(50px - 2 * var(--y));
+    background-position: center;
+
+    clip-path: polygon(
+      var(--x)
+      var(--y),
+  
+      calc(100% - var(--x) - var(--s))
+      var(--y),
+  
+      calc(100% - var(--x))
+      calc(100% - var(--y)),
+  
+      calc(var(--x) + var(--s))
+      calc(100% - var(--y))
+    );
+  }
+}

@@ -1,0 +1,272 @@
+.skew-left-padding, #left > .name, .char, .score, .char-container {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding, #right > .name, .char, .score, .char-container {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center, .score, #subContainer > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+h4 {
+  font-size: var(--sub-banner-font-size);
+}
+
+body {
+  opacity: var(--initOpacity);
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "font";
+  text-transform: var(--text-mode);
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, var(--banner-shadow-opacity)));
+}
+
+#banner {
+  width: var(--banner-width);
+  height: var(--banner-height);
+  margin-top: var(--banner-y-position);
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url("../img/banner-background.png");
+  background-size: 70%;
+}
+
+#middle {
+  z-index: 2;
+  width: var(--logo-container-width);
+  height: var(--logo-container-height);
+  background: var(--logo-container-accent);
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--skew)) 100%, var(--skew) 100%);
+}
+
+#innerMid {
+  height: 100%;
+  background-image: linear-gradient(to top, var(--logo-container-accent), rgba(255, 0, 0, 0)), url("../img/banner-background.png");
+  background-size: 200%;
+  background-position: center;
+  clip-path: polygon(var(--logo-sidebars-width) 0, calc(100% - var(--logo-sidebars-width)) 0, calc(100% - var(--skew) - var(--logo-sidebars-width)) 100%, calc(var(--skew) + var(--logo-sidebars-width)) 100%);
+}
+
+#logo {
+  height: 100%;
+  background-image: url("../img/logo.png");
+  background-size: var(--logo-size);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#left, #right {
+  flex: 1;
+  display: flex;
+}
+
+#right {
+  flex-direction: row-reverse;
+}
+
+#subContainer {
+  width: var(--sub-banner-width);
+  margin-top: var(--sub-banner-distance-top);
+  height: var(--sub-banner-height);
+  display: flex;
+  justify-content: space-between;
+}
+#subContainer > * {
+  flex: 1;
+  background: var(--sub-banner-background);
+  color: var(--sub-banner-font-color);
+  box-sizing: border-box;
+}
+
+#mBanner {
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--sub-banner-skew-factor) * var(--skew)) 100%, calc(var(--sub-banner-skew-factor) * var(--skew)) 100%);
+}
+
+#lBanner {
+  clip-path: polygon(0 0, calc(100% - var(--sub-banner-skew-factor) * var(--skew)) 0, 100% 100%, calc(var(--sub-banner-skew-factor) * var(--skew)) 100%);
+  justify-content: flex-start !important;
+  padding-left: calc(var(--skew) * var(--sub-banner-skew-factor));
+}
+
+#rBanner {
+  clip-path: polygon(calc(var(--sub-banner-skew-factor) * var(--skew)) 0, 100% 0, calc(100% - var(--sub-banner-skew-factor) * var(--skew)) 100%, 0 100%);
+  justify-content: flex-end !important;
+  padding-right: calc(var(--skew) * var(--sub-banner-skew-factor));
+}
+
+.skew-left-padding, #left > .name, .char, .score, .char-container {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding, #right > .name, .char, .score, .char-container {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center, .score, #subContainer > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end {
+  width: var(--banner-end-width);
+  z-index: 3;
+}
+
+.inner {
+  background: black;
+  opacity: var(--banner-inner-opacity);
+  height: 100%;
+  clip-path: polygon(calc(var(--banner-end-border-x) - 2px) var(--banner-end-border-y), calc(100% - var(--banner-end-border-x) - var(--char-border-skew-adjust)) var(--banner-end-border-y), calc(100% - var(--banner-end-border-x)) calc(100% - var(--banner-end-border-y)), calc(var(--banner-end-border-x) - 2px) calc(100% - var(--banner-end-border-y)));
+}
+
+.char-container {
+  width: var(--char-container-width);
+  background: var(--char-container-width);
+}
+
+.name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: var(--player-tag-color);
+}
+.name .spon {
+  color: var(--sponsor-color);
+  margin: 0 5px;
+}
+
+.score {
+  color: var(--score-color);
+  overflow: show;
+  width: var(--score-width);
+  clip-path: none !important;
+  position: relative;
+}
+.score:before {
+  background: var(--logo-container-accent);
+  width: 100%;
+  height: 100%;
+  filter: var(--score-filter);
+  display: block;
+  position: absolute;
+}
+
+.char {
+  background-color: var(--char-background);
+  background-repeat: no-repeat !important;
+  background-origin: content-box !important;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.skew-left-padding, #left > .name, .char-container, .score, .char {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding, #right > .name, .char-container, .score, .char {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center, #subContainer > *, .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#left > .end {
+  clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, 0px 100%);
+  background: var(--banner-end-left-color);
+}
+#left > .char-container {
+  clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, 0px 100%);
+}
+#left > .name {
+  clip-path: polygon(0 0, calc(100% - 0px) 0, 100% 100%, var(--skew) 100%);
+}
+#left > .name > .spon {
+  margin-left: var(--skew);
+}
+#left > .score {
+  clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, var(--skew) 100%);
+  background-image: linear-gradient(-110deg, var(--logo-container-accent), var(--logo-container-accent), rgba(255, 0, 0, 0), transparent);
+  background-size: 150%;
+  background-position: bottom 0 right -30px;
+  background-repeat: no-repeat;
+}
+#left .char {
+  background-image: url("../chars/Mario.png");
+  background-size: calc(50px - 2 * var(--banner-end-border-y));
+  background-position: center;
+  clip-path: polygon(var(--banner-end-border-x) var(--banner-end-border-y), calc(100% - var(--banner-end-border-x) - var(--char-border-skew-adjust)) var(--banner-end-border-y), calc(100% - var(--banner-end-border-x)) calc(100% - var(--banner-end-border-y)), calc(var(--banner-end-border-x) + var(--char-border-skew-adjust)) calc(100% - var(--banner-end-border-y)));
+}
+
+.skew-left-padding, .char-container, .score, .char, #left > .name {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding, #right > .name, .char-container, .score, .char {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center, #subContainer > *, .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#right > .end {
+  clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - 0px) 100%, 0 100%);
+  background: var(--banner-end-left-color);
+}
+#right > .end .inner {
+  transform: scaleX(-1);
+}
+#right > .char-container {
+  clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - 0px) 100%, 0 100%);
+}
+#right > .name {
+  clip-path: polygon(0px 0, 100% 0, calc(100% - var(--skew)) 100%, 0 100%);
+  justify-content: flex-end;
+}
+#right > .name > .tag {
+  margin-right: var(--skew);
+}
+#right > .score {
+  clip-path: polygon(var(--skew) 0, 100% 0, calc(100% - var(--skew)) 100%, 0 100%);
+  background-image: linear-gradient(110deg, var(--logo-container-accent), var(--logo-container-accent), rgba(255, 0, 0, 0), transparent);
+  background-size: 150%;
+  background-position: bottom 0 left -30px;
+  background-repeat: no-repeat;
+}
+#right .char {
+  background-image: url("../chars/Mario.png");
+  background-size: calc(50px - 2 * var(--banner-end-border-y));
+  background-position: center;
+  clip-path: polygon(calc(var(--banner-end-border-x) + var(--char-border-skew-adjust)) var(--banner-end-border-y), calc(100% - var(--banner-end-border-x)) var(--banner-end-border-y), calc(100% - var(--banner-end-border-x) - var(--char-border-skew-adjust)) calc(100% - var(--banner-end-border-y)), var(--banner-end-border-x) calc(100% - var(--banner-end-border-y)));
+}
+
+/*# sourceMappingURL=style.css.map */

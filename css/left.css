@@ -1,0 +1,52 @@
+.skew-left-padding, #left > .char-container, #left > .name, #left .char {
+  margin-left: calc(var(--skew) * -1);
+  padding-left: var(--skew);
+}
+
+.skew-right-padding {
+  margin-right: calc(var(--skew) * -1);
+  padding-right: var(--skew);
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#left > .end {
+  -webkit-clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, 0px 100%);
+          clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, 0px 100%);
+  background: red;
+}
+
+#left > .char-container {
+  -webkit-clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, 0px 100%);
+          clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, 0px 100%);
+}
+
+#left > .name {
+  -webkit-clip-path: polygon(0 0, calc(100% - 0px) 0, 100% 100%, var(--skew) 100%);
+          clip-path: polygon(0 0, calc(100% - 0px) 0, 100% 100%, var(--skew) 100%);
+}
+
+#left > .score {
+  -webkit-clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, var(--skew) 100%);
+          clip-path: polygon(0 0, calc(100% - var(--skew)) 0, 100% 100%, var(--skew) 100%);
+  background-image: linear-gradient(-110deg, red, red, rgba(255, 0, 0, 0), transparent);
+  background-size: 150%;
+  background-position: bottom 0 right -30px;
+  background-repeat: no-repeat;
+}
+
+#left .char {
+  background-image: url("/chars/mario.png");
+  background-position: var(--cx) var(--cy);
+}
+/*# sourceMappingURL=left.css.map */

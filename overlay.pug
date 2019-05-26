@@ -1,0 +1,33 @@
+mixin bannerSide(num)
+  .end
+    .inner
+  .char-container
+    .char(data-sb=`image${num}`)
+  .name(data-sb=`player${num}P`)
+    h3(data-sb=`player${num}A`).spon SPON |
+    h3(data-sb=`player${num}B`).tag Player Name
+  .score
+    h1(data-sb=`score${num}`) 0
+
+html
+  head
+    link(rel="stylesheet" href="css/style.css")
+    script(src="js/jquery-3.1.1.min.js")
+    script(src="js/reconnecting-websocket.min.js")
+  body
+    #banner
+      #left
+        +bannerSide(1)
+      #middle
+        #innerMid
+          #logo
+      #right
+        +bannerSide(2)
+    #subContainer
+      #lBanner
+        h4(data-sb=`gameA`) tournament name
+      #mBanner
+        h4(data-sb="match") grand finals
+      #rBanner
+        h4(data-sb="gameB") ultimate @ place
+    script(src="js/primer.js")
